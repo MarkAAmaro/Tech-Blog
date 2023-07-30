@@ -1,0 +1,8 @@
+<h1>{{blog.title}}</h1>
+<p>{{blog.content}}</p>
+<p>Posted by {{blog.username}} on {{blog.date_created}}</p>
+
+<h2>Comments</h2>
+{{#each comments}}
+  <p>{{this.comment_text}} - {{this.username}}</p>
+{{/each}}
