@@ -1,17 +1,19 @@
 require('dotenv').config();
 const Sequelize = require('sequelize');
-const url = require('url');
 
-let databaseUrl = process.env.CLEARDB_DATABASE_URL || process.env.JAWSDB_URL;
 let sequelize;
 
-if (databaseUrl) {
-  const dbUrlParts = url.parse(databaseUrl);
-  const [username, password] = dbUrlParts.auth.split(':');
-
-  sequelize = new Sequelize(dbUrlParts.pathname.substring(1), username, password, {
-    host: dbUrlParts.hostname,
-    dialect: 'mysql',
+if (process.env.DATABASE_URL) {
+  sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    protocol: 'postgres',
+    logging: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
   });
 } else {
   sequelize = new Sequelize(
