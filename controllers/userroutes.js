@@ -13,5 +13,5 @@ router.post('/logout', (req, res) => {
 router.post('/signup', async (req, res) => {
  
 });
-
+console.log('user routes loaded');
 module.exports = router;

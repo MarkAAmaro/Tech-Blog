@@ -16,5 +16,5 @@ router.put('/blog/:id', async (req, res) => {
 router.delete('/blog/:id', async (req, res) => {
 
 });
-
+console.log('API routes loaded');
 module.exports = router;

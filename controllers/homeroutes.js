@@ -47,7 +47,7 @@ router.get('/blog/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+console.log('home routes loaded');
 module.exports = router;
 
 
