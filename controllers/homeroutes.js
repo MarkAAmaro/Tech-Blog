@@ -7,12 +7,10 @@ router.get('/', async (req, res) => {
       include: [{ model: User }],
     });
 
-    
     console.log('Raw Blog Data:', blogData);
 
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    
     console.log('Plain Blog Data:', blogs);
 
     res.render('home', { blogs, loggedIn: req.session.loggedIn });
@@ -28,7 +26,6 @@ router.get('/blog/:id', async (req, res) => {
       include: [{ model: User }],
     });
 
-    
     console.log('Raw Blog Data:', blogData);
 
     if (!blogData) {
@@ -39,7 +36,6 @@ router.get('/blog/:id', async (req, res) => {
 
     const blog = blogData.get({ plain: true });
 
-    
     console.log('Plain Blog Data:', blog);
 
     res.render('blog', { 
@@ -52,7 +48,7 @@ router.get('/blog/:id', async (req, res) => {
   }
 });
 
-
+module.exports = router;
 
 
 
