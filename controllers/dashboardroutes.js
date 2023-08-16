@@ -22,13 +22,10 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, async (req, res) => {
-    // Logic for fetching the specific blog post for editing.
-    // For example, render an edit view with the blog post data.
+ 
 });
 router.get('/view/:id', withAuth, async (req, res) => {
-    // fetch the blog post using the id from req.params.id
-    // fetch all comments associated with the blog
-    // render a new handlebars view with the blog and comments data
+   
 });
 console.log('dashboard routes loaded');
 module.exports = router;

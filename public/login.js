@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
     
         if (response.ok) {
             console.log('Response from server was successful. Redirecting to dashboard.');
-            document.location.replace('/dashboard'); // Updated this line
+            document.location.replace('/dashboard'); 
         } else {
             try {
                 const data = await response.json();

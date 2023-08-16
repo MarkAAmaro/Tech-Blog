@@ -1,4 +1,4 @@
-/* Reset some default styling */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     color: #333;
 }
 
-/* Header */
+
 header {
     background-color: #2C3E50;
     color: white;
@@ -42,7 +42,7 @@ nav a:hover {
     color: #BDC3C7;
 }
 
-/* Main Content */
+
 .container {
     width: 80%;
     margin: 20px auto;
@@ -56,7 +56,7 @@ nav a:hover {
     padding: 30px 20px;
 }
 
-/* Blog Posts */
+
 .blog-post {
     margin-bottom: 30px;
     padding: 20px;
@@ -76,7 +76,7 @@ nav a:hover {
     line-height: 1.5;
 }
 
-/* Comments */
+
 .comment {
     border-top: 1px solid #ddd;
     padding-top: 10px;
@@ -103,7 +103,7 @@ nav a:hover {
     color: #2980B9;
 }
 
-/* Form Styling */
+
 .form {
     margin: 20px 0;
 }
@@ -138,7 +138,7 @@ nav a:hover {
 .btn:hover {
     background-color: #2980B9;
 }
-/* Blog post styling */
+
 .blog-post {
     margin-bottom: 30px;
     padding: 20px;
@@ -164,7 +164,7 @@ nav a:hover {
     margin-top: 10px;
 }
 
-/* Comments section styling */
+
 .comments-section {
     margin-top: 30px;
 }
@@ -223,7 +223,7 @@ nav a:hover {
 .new-comment-form button:hover {
     background-color: #2980B9;
 }
-/* Blog Posts Section */
+
 .blog-posts-section {
     margin-top: 30px;
 }
@@ -233,7 +233,7 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* New Post Form */
+
 .new-post-form {
     margin-bottom: 30px;
 }
