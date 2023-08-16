@@ -1,5 +1,13 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
+
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup'); 
+});
 
 router.get('/', async (req, res) => {
   try {
@@ -7,15 +15,11 @@ router.get('/', async (req, res) => {
       include: [{ model: User }],
     });
 
-    console.log('Raw Blog Data:', blogData);
-
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    console.log('Plain Blog Data:', blogs);
-
-    res.render('home', { blogs, loggedIn: req.session.loggedIn });
+    res.render('home', { blogs, logged_in: req.session.logged_in });
   } catch (err) {
-    console.log('Error in "/" route:', err);
+    console.error('Error in "/" route:', err);
     res.status(500).json(err);
   }
 });
@@ -23,32 +27,37 @@ router.get('/', async (req, res) => {
 router.get('/blog/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [{ model: User }],
+      include: [
+        { 
+          model: User 
+        },
+        { 
+          model: Comment,
+          attributes: ['comment_text', 'createdAt'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        }
+      ],
     });
 
-    console.log('Raw Blog Data:', blogData);
-
     if (!blogData) {
-      console.log('No blog found with this id:', req.params.id);
-      res.status(404).json({ message: 'No blog found with this id!' });
+      console.error('No blog found with this id:', req.params.id);
+      res.status(404).render('404-page');  
       return;
     }
 
     const blog = blogData.get({ plain: true });
 
-    console.log('Plain Blog Data:', blog);
+    res.render('blog', { blog, logged_in: req.session.logged_in });
 
-    res.render('blog', { 
-      blog, 
-      loggedIn: req.session.loggedIn 
-    });
   } catch (err) {
-    console.log('Error in "/blog/:id" route:', err);
+    console.error('Error in "/blog/:id" route:', err);
     res.status(500).json(err);
   }
 });
+
 console.log('home routes loaded');
 module.exports = router;
-
-
 

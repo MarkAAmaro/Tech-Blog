@@ -1,8 +1,24 @@
-<h1>{{blog.title}}</h1>
-<p>{{blog.content}}</p>
-<p>Posted by {{blog.username}} on {{blog.date_created}}</p>
+<main class="container container-fluid mt-5">
+    <article class="blog-post">
+        <h1>{{blog.title}}</h1>
+        <p class="post-content">{{blog.content}}</p>
+        <p class="post-meta">Posted by {{blog.User.username}} on {{blog.date_created}}</p>
+    </article>
 
-<h2>Comments</h2>
-{{#each comments}}
-  <p>{{this.comment_text}} - {{this.username}}</p>
-{{/each}}
+    <section class="comments-section">
+        <h2>Comments</h2>
+        {{#each blog.comments}}
+            <div class="comment">
+                <p class="comment-content"><strong>{{this.User.username}}</strong> ({{this.createdAt}}): {{this.comment_text}}</p>
+                <a href="/comment/{{this.id}}/edit" class="edit-comment">Edit</a>
+            </div>
+        {{/each}}
+
+        <h3>Add a Comment</h3>
+        <form class="new-comment-form" action="/blog/{{blog.id}}/comment" method="post">
+            <label for="comment-text">Your Comment:</label>
+            <textarea id="comment-text" name="comment_text" required></textarea>
+            <button type="submit" class="btn">Add Comment</button>
+        </form>
+    </section>
+</main>

@@ -1,20 +1,28 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styling */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Header */
 header {
-    background-color: #333;
+    background-color: #2C3E50;
     color: white;
     padding: 10px 0;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+header h1 {
     margin: 0;
     padding: 0 20px;
-    float: left;
+    font-size: 28px;
 }
 
 nav {
@@ -25,35 +33,267 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
 }
 
+nav a:hover {
+    color: #BDC3C7;
+}
+
+/* Main Content */
 .container {
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     overflow: hidden;
 }
 
 .container-fluid {
+    padding: 30px 20px;
+}
+
+/* Blog Posts */
+.blog-post {
+    margin-bottom: 30px;
     padding: 20px;
+    background-color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-.no-button {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
+.blog-post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+.blog-post p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Comments */
+.comment {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment p {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+}
+
+.comment a {
+    font-size: 14px;
+    color: #3498DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.comment a:hover {
+    color: #2980B9;
+}
+
+/* Form Styling */
+.form {
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-input {
     width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980B9;
+}
+/* Blog post styling */
+.blog-post {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.blog-post h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Comments section styling */
+.comments-section {
+    margin-top: 30px;
+}
+
+.comments-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.comment {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.comment-content {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+.edit-comment {
+    font-size: 14px;
+    color: #3498DB;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.edit-comment:hover {
+    color: #2980B9;
+}
+
+.new-comment-form label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.new-comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.new-comment-form button {
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-comment-form button:hover {
+    background-color: #2980B9;
+}
+/* Blog Posts Section */
+.blog-posts-section {
+    margin-top: 30px;
+}
+
+.blog-posts-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* New Post Form */
+.new-post-form {
+    margin-bottom: 30px;
+}
+
+.new-post-form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.new-post-form .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.new-post-form .btn {
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-post-form .btn:hover {
+    background-color: #2980B9;
+}
+
+/* Post List */
+.post-list {
+    margin-top: 30px;
+}
+
+.post-preview {
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.post-preview h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-preview-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.post-preview-actions {
+    margin-top: 15px;
+}
+
+.post-preview-actions .btn {
+    margin-right: 10px;
 }

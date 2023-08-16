@@ -1,5 +1,7 @@
 {{#each blogs}}
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
-  <p>Posted by {{username}} on {{date_created}}</p>
+    <div class="blog-post">
+        <h2><a href="/blog/{{id}}">{{title}}</a></h2>
+        <p>{{content}}</p>
+        <p>Posted by {{User.username}} on {{date_created}}</p>
+    </div>
 {{/each}}
